@@ -3,17 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <title>Meu Catálogo</title>
-
     <link rel="stylesheet" href="styles.css" />
-
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
-
   <body>
     <header>
       <h1>Catálogo de Produtos</h1>
     </header>
 
+    <!-- Carrinho de Compras -->
+    <section class="carrinho-container">
+      <h2>🛍️ Meu Carrinho</h2>
+      <ul id="lista-carrinho">
+        <p>Seu carrinho está vazio.</p>
+      </ul>
+      <div class="carrinho-total">
+        <strong>Total: <span id="valor-total">R$ 0,00</span></strong>
+      </div>
+      <button onclick="finalizarCompra()" class="btn-finalizar">
+        Finalizar Pedido
+      </button>
+      <button onclick="esvaziarCarrinho()" class="btn-limpar">
+        Limpar Carrinho
+      </button>
+    </section>
+
+    <!-- Vitrine de Produtos -->
     <div id="vitrine" class="grid-produtos"></div>
 
     <footer>
